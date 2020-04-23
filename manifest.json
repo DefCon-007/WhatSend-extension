@@ -1,19 +1,17 @@
- {
-   "name": "Whats-Send",
-   "version": "1.0",
-   "description": "My first Chrome extension.",
-   "manifest_version": 2,
-   "browser_action": {
-     "default_popup": "popup.html"
-   },
-   "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "all_frames": true,
-    "js": ["content_script.js"]
-    }],
-   "permissions": [
-    "tabs",
-    "storage",
-    "https://web.whatsapp.com/*"
-  ]
- }
+{
+  "name": "What-Send",
+  "version": "1.0",
+  "description": "A utility extension to send message from whatsapp web automatically.",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "all_frames": true,
+      "js": ["content_script.js"]
+    }
+  ],
+  "permissions": ["tabs", "storage", "https://web.whatsapp.com/*"]
+}
