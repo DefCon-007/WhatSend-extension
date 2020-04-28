@@ -6,33 +6,40 @@
   "browser_action": {
     "default_popup": "popup.html"
   },
-
   "icons": {
     "16": "./icon.png",
     "48": "./icon.png",
     "128": "./icon.png"
   },
-
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [
+      "background.js"
+    ],
     "persistent": true
   },
-
   "content_scripts": [
     {
-      "matches": ["*://web.whatsapp.com/*"],
+      "matches": [
+        "*://web.whatsapp.com/*"
+      ],
       "all_frames": true,
-      "js": ["content_script_whatsapp_web.js"]
+      "js": [
+        "content_script_whatsapp_web.js"
+      ]
     },
     {
-      "matches": ["*://whatsend.defcon007.com/*", 
-        "file:///Users/defcon/personal/whats-sender-website/index.html"], 
+      "matches": [
+        "*://whatsend.defcon007.com/*",
+        "file:///Users/defcon/personal/whats-sender-website/index.html"
+      ],
       "all_frames": true,
-      "js": ["content_script_main_site.js"]
+      "js": [
+        "content_script_main_site.js"
+      ]
     }
   ],
   "permissions": [
     "tabs",
-    "storage",
+    "storage"
   ]
 }
