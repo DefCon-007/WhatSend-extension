@@ -20,7 +20,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://web.whatsapp.com/*"
+        "*://web.whatsapp.com*"
       ],
       "all_frames": true,
       "js": [
@@ -29,8 +29,8 @@
     },
     {
       "matches": [
-        "*://whatsend.defcon007.com/*",
-        "file:///Users/defcon/personal/whats-sender-website/index.html"
+        "*://whatsend.defcon007.com*",
+        "file:///Users/defcon/personal/whats-sender-website/index.html*"
       ],
       "all_frames": true,
       "js": [
@@ -40,6 +40,9 @@
   ],
   "permissions": [
     "tabs",
-    "storage"
+    "storage",
+    "*://whatsend.defcon007.com*",
+    "file:///Users/defcon/personal/whats-sender-website/index.html*",
+    "*://web.whatsapp.com*"
   ]
 }
