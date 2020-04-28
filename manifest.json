@@ -1,22 +1,38 @@
 {
   "name": "What-Send",
-  "version": "1.0",
+  "version": "1.2",
   "description": "A utility extension to send message from whatsapp web automatically.",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "popup.html"
   },
+
   "icons": {
     "16": "./icon.png",
     "48": "./icon.png",
     "128": "./icon.png"
   },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+
   "content_scripts": [
     {
-      "matches": ["https://web.whatsapp.com/*"],
+      "matches": ["*://web.whatsapp.com/*"],
       "all_frames": true,
-      "js": ["content_script.js"]
+      "js": ["content_script_whatsapp_web.js"]
+    },
+    {
+      "matches": ["*://whatsend.defcon007.com/*", 
+        "file:///Users/defcon/personal/whats-sender-website/index.html"], 
+      "all_frames": true,
+      "js": ["content_script_main_site.js"]
     }
   ],
-  "permissions": ["tabs", "storage", "https://web.whatsapp.com/*"]
+  "permissions": [
+    "tabs",
+    "storage",
+  ]
 }
