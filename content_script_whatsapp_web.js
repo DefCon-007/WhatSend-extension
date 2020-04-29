@@ -16,7 +16,10 @@ async function waitForElementToHide(selector, mainDivElem) {
             if (mainDivElem) {
                 var numElem = mainDivElem.querySelector("span[dir='auto']");
                 var numElemText = numElem.innerText
-                var number = numElemText.match(numberPattern).join('');
+                var numberMatch = numElemText.match(numberPattern);
+                if (numberMatch) {
+                    var number = numberMatch.join('');
+                }
             }
             updateNumberState(number);
             return;
