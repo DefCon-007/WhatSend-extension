@@ -13,10 +13,13 @@ try {
 
 
 function setCheckedState(state) {
-    console.log("setting teh state");
-    console.log(state)
     var elem = document.getElementById('onoffswitch');
-    elem.checked = state.shouldAutoSend;
+    if (state.shouldAutoSend === undefined){
+        elem.checked = true
+    } else {
+        elem.checked = state.shouldAutoSend;
+    }
+    
 }
 browserApi.storage.local.get(['shouldAutoSend'], setCheckedState)
 
