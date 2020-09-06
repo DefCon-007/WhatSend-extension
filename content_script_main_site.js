@@ -12,7 +12,7 @@ async function updateNumbeStatus(number) {
                 elem.innerHTML = "<img src='https://raw.githubusercontent.com/DefCon-007/WhatSend/master/images/Check.svg?sanitize=true' />"
                 elem.setAttribute("data-sort", "success");
             } else {
-                elem.innerHTML = "<img src='https://raw.githubusercontent.com/DefCon-007/WhatSend/master/images/Warning.svg?sanitize=true' />"
+                elem.innerHTML = "<img src='https://raw.githubusercontent.com/DefCon-007/WhatSend/master/images/False.svg?sanitize=true' />"
             }
         }
     }
