@@ -15,6 +15,7 @@ try {
 function setCheckedState(state) {
     var elem = document.getElementById('onoffswitch');
     if (state.shouldAutoSend === undefined){
+        browserApi.storage.local.set({ shouldAutoSend: true });
         elem.checked = true
     } else {
         elem.checked = state.shouldAutoSend;
@@ -25,6 +26,7 @@ browserApi.storage.local.get(['shouldAutoSend'], setCheckedState)
 
 // Setup the checkbox
 var elem = document.getElementById('onoffswitch');
+
 elem.addEventListener('change', (event) => {
     // Checkbox value changed!!!
     console.log("settigns")
